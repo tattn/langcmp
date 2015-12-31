@@ -1,0 +1,23 @@
+h1 Listing documents
+
+- @documents.uniq.pluck(:category).each do |category|
+  h2 = category
+  - docs = @documents.where(category: category)
+  - docs.uniq.pluck(:title).each do |title|
+    h3 = title
+
+    table
+      thead
+        tr
+          th
+          th
+          th
+      tbody
+        - docs.where(title: title).each do |doc|
+          tr
+            td = doc.language
+            tr
+              td = syntax_hilight(doc.source, doc.language)
+
+
+br
