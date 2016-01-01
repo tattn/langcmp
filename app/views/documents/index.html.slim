@@ -1,16 +1,17 @@
 h1 Comparison of Programming Languages
 
-- @documents.uniq.pluck(:category).each do |category|
+- @documents.uniq.pluck(:category).each_with_index do |category, ic|
   h2 = category
   - docs = @documents.where(category: category)
-  - docs.uniq.pluck(:title).each do |title|
+  - docs.uniq.pluck(:title).each_with_index do |title, it|
+    - code_collapse = "code-collapse#{ic}#{it}"
     #accordion.panel-group role="tablist" aria-multiselectable="true"
       .panel.panel-default
         #headingOne.panel-heading role="tab"
           h4.panel-title
-            a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
+            a.collapsed role="button" data-toggle="collapse" data-parent="#accordion" href="##{code_collapse}" aria-expanded="false" aria-controls="#{code_collapse}"
               = title
-        #collapseOne.panel-collapse.collapse.in role="tabpanel" aria-labelledby="headingOne"
+        div.panel-collapse.collapse id="#{code_collapse}" role="tabpanel" aria-labelledby="headingOne"
           .panel-body
             - docs.where(title: title).each do |doc|
               p = doc.language
