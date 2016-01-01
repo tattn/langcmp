@@ -6,7 +6,7 @@ foo_bar_baz
 
 # Comment
 ```ruby
-\# this is a comment line
+# this is a comment line
 ```
 
 # Here Document

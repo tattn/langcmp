@@ -1,23 +1,19 @@
-h1 Listing documents
+h1 Comparison of Programming Languages
 
 - @documents.uniq.pluck(:category).each do |category|
   h2 = category
   - docs = @documents.where(category: category)
   - docs.uniq.pluck(:title).each do |title|
-    h3 = title
-
-    table
-      thead
-        tr
-          th
-          th
-          th
-      tbody
-        - docs.where(title: title).each do |doc|
-          tr
-            td = doc.language
-            tr
-              td = syntax_hilight(doc.source, doc.language)
-
+    #accordion.panel-group role="tablist" aria-multiselectable="true"
+      .panel.panel-default
+        #headingOne.panel-heading role="tab"
+          h4.panel-title
+            a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
+              = title
+        #collapseOne.panel-collapse.collapse.in role="tabpanel" aria-labelledby="headingOne"
+          .panel-body
+            - docs.where(title: title).each do |doc|
+              p = doc.language
+              = syntax_hilight(doc.source, doc.language)
 
 br
