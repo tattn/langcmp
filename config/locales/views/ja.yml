@@ -1,0 +1,10 @@
+ja:
+  documents:
+    index:
+      title: "プログラミング言語の比較"
+      literal:
+        identifier: "識別子"
+        comment: "コメント"
+        here_document: "ヒアドキュメント"
+    messages:
+    errors:

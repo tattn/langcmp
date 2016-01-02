@@ -20,6 +20,15 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Top", "/"  %></li>
           </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <% I18n.available_locales.reject{|l| l == I18n.locale}.each do |locale| %>
+                <% label = locale == :en ? 'Change to English' : '日本語に変更' %>
+                <%= link_to(label, i18n_url_for(params.merge(locale: locale))) %>
+              <% end %>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

@@ -1,0 +1,10 @@
+ja:
+  documents:
+    index:
+      title: "Comparison of Programming Languages"
+      literal:
+        identifier: "Identifier"
+        comment: "Comment"
+        here_document: "Here Document"
+    messages:
+    errors:

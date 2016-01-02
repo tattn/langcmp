@@ -1,15 +1,15 @@
-# Identifier
+# identifier
 ```ruby
 foobar
 foo_bar_baz
 ```
 
-# Comment
+# comment
 ```ruby
 # this is a comment line
 ```
 
-# Here Document
+# here_document
 ```ruby
 =begin
 the everything between a line beginning with `=begin' and

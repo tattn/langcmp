@@ -7,4 +7,11 @@ module ApplicationHelper
     end
     CodeRay.scan(code, lang).div(:line_numbers => :table).html_safe
   end
+
+	def i18n_url_for(options)
+		if options[:locale] == I18n.default_locale
+			options[:locale] = nil
+		end
+		url_for(options)
+	end
 end

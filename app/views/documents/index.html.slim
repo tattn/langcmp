@@ -10,7 +10,7 @@ h1 Comparison of Programming Languages
         #headingOne.panel-heading role="tab"
           h4.panel-title
             a.collapsed role="button" data-toggle="collapse" data-parent="#accordion" href="##{code_collapse}" aria-expanded="false" aria-controls="#{code_collapse}"
-              = title
+              = t ".#{category}.#{title}"
         div.panel-collapse.collapse id="#{code_collapse}" role="tabpanel" aria-labelledby="headingOne"
           .panel-body
             - docs.where(title: title).each do |doc|
