@@ -2,6 +2,7 @@
 
 .code-window {
 	display: inline-block;
+	background-color: $color-header;
 
 	& .language {
 		display: block;
@@ -10,6 +11,10 @@
 		text-align: center;
 	}
 	& .CodeRay {
-		background-color: $color-header;
+	}
+	& .textfield {
+		display: block;
+		background-color: $color-bg;
+		margin-bottom: 10px;
 	}
 }

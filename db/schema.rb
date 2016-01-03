@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20151231095309) do
   create_table "documents", force: :cascade do |t|
     t.string   "category",   null: false
     t.string   "title",      null: false
-    t.string   "source",     null: false
+    t.string   "source"
     t.string   "language",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

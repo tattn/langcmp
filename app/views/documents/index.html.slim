@@ -3,7 +3,8 @@ input#btn-open-collapses.btn.btn-default type="button" value="#{t '.open_collaps
 input#btn-close-collapses.btn.btn-default type="button" value="#{t '.close_collapses'}"
 
 - @documents.uniq.pluck(:category).each_with_index do |category, ic|
-  h2 = t ".#{category}_header"
+  h2 <span class='glyphicon glyphicon-chevron-down category-icon' aria-hidden='true'></span>#{t ".#{category}_header"}
+    
   - docs = @documents.where(category: category)
   - docs.uniq.pluck(:title).each_with_index do |title, it|
     - code_collapse = "code-collapse#{ic}#{it}"
@@ -18,7 +19,11 @@ input#btn-close-collapses.btn.btn-default type="button" value="#{t '.close_colla
             - docs.where(title: title).each do |doc|
               .code-window
                 .language = doc.language
-                = syntax_hilight(doc.source, doc.language)
+                - if doc.source
+                  = syntax_hilight(doc.source, doc.language)
+                - else
+                  .textfield
+                    | have no
 
 javascript:
   $('.collapse').collapse('show');

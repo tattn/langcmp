@@ -1,11 +1,11 @@
 # identifier
-```php
+```dart
 foobar
 foo_bar_baz
 ```
 
 # comment
-```php
+```dart
 // this is a comment line
 
 /* Here is
@@ -14,10 +14,8 @@ comment. */
 ```
 
 # here_document
-```php
-print <<<EOS
-Here is
-here document
-EOS;
+```ruby
+print("""Here is
+here document""");
 ```
 

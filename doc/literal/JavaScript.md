@@ -1,11 +1,11 @@
 # identifier
-```php
+```javascript
 foobar
 foo_bar_baz
 ```
 
 # comment
-```php
+```javascript
 // this is a comment line
 
 /* Here is
@@ -14,10 +14,5 @@ comment. */
 ```
 
 # here_document
-```php
-print <<<EOS
-Here is
-here document
-EOS;
-```
+nothing
 

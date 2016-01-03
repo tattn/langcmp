@@ -3,7 +3,7 @@ class CreateDocuments < ActiveRecord::Migration
     create_table :documents do |t|
       t.string :category, null: false
       t.string :title, null: false
-      t.string :source, null: false
+      t.string :source
       t.string :language, null: false
 
       t.timestamps null: false

@@ -1,23 +1,25 @@
 # identifier
-```php
+```perl
 foobar
 foo_bar_baz
 ```
 
 # comment
-```php
-// this is a comment line
+```perl
+# this is a comment line
 
-/* Here is
+=pod
+Here is
 multi-line
-comment. */
+comment.
+=cut
 ```
 
 # here_document
-```php
-print <<<EOS
+```perl
+print <<'EOS';
 Here is
 here document
-EOS;
+EOS
 ```
 
