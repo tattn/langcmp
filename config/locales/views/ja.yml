@@ -2,6 +2,9 @@ ja:
   documents:
     index:
       title: "プログラミング言語の比較"
+      open_collapses: "全て展開"
+      close_collapses: "全て閉じる"
+      literal_header: "字句構造"
       literal:
         identifier: "識別子"
         comment: "コメント"

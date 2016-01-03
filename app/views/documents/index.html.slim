@@ -1,7 +1,9 @@
-h1 Comparison of Programming Languages
+h1 = t ".title"
+input#btn-open-collapses.btn.btn-default type="button" value="#{t '.open_collapses'}"
+input#btn-close-collapses.btn.btn-default type="button" value="#{t '.close_collapses'}"
 
 - @documents.uniq.pluck(:category).each_with_index do |category, ic|
-  h2 = category
+  h2 = t ".#{category}_header"
   - docs = @documents.where(category: category)
   - docs.uniq.pluck(:title).each_with_index do |title, it|
     - code_collapse = "code-collapse#{ic}#{it}"
@@ -14,7 +16,15 @@ h1 Comparison of Programming Languages
         div.panel-collapse.collapse id="#{code_collapse}" role="tabpanel" aria-labelledby="headingOne"
           .panel-body
             - docs.where(title: title).each do |doc|
-              p = doc.language
-              = syntax_hilight(doc.source, doc.language)
+              .code-window
+                .language = doc.language
+                = syntax_hilight(doc.source, doc.language)
 
-br
+javascript:
+  $('.collapse').collapse('show');
+  $('#btn-open-collapses').click(function() {
+    $('.collapse').collapse('show');
+  });
+  $('#btn-close-collapses').click(function() {
+    $('.collapse').collapse('hide');
+  });

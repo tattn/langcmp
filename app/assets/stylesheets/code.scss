@@ -1,0 +1,15 @@
+@import "colors";
+
+.code-window {
+	display: inline-block;
+
+	& .language {
+		display: block;
+		background-color: $color-header;
+		color: $color-bg;
+		text-align: center;
+	}
+	& .CodeRay {
+		background-color: $color-header;
+	}
+}

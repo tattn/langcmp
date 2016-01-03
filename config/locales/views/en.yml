@@ -1,7 +1,10 @@
-ja:
+en:
   documents:
     index:
       title: "Comparison of Programming Languages"
+      open_collapses: "All open"
+      close_collapses: "All close"
+      literal_header: "Literal"
       literal:
         identifier: "Identifier"
         comment: "Comment"

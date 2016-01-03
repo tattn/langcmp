@@ -6,6 +6,7 @@ module ApplicationHelper
       lang = :ruby
     end
     CodeRay.scan(code, lang).div(:line_numbers => :table).html_safe
+		# CodeRay.scan(code, lang).div.html_safe
   end
 
 	def i18n_url_for(options)
