@@ -3,6 +3,8 @@
 .code-window {
 	display: inline-block;
 	background-color: $color-header;
+	// border: 2px solid #CCC;
+	margin: 3px;
 
 	& .language {
 		display: block;
@@ -17,4 +19,18 @@
 		background-color: $color-bg;
 		margin-bottom: 10px;
 	}
+}
+
+.panel-heading .panel-title {
+	color: $color-text;
+}
+
+.panel-heading .accordion-toggle:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114"; // ▽
+    float: left;
+		padding-right: 5px;
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    content: "\e080"; // >
 }

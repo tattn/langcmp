@@ -12,18 +12,19 @@ input#btn-close-collapses.btn.btn-default type="button" value="#{t '.close_colla
       .panel.panel-default
         #headingOne.panel-heading role="tab"
           h4.panel-title
-            a.collapsed role="button" data-toggle="collapse" data-parent="#accordion" href="##{code_collapse}" aria-expanded="false" aria-controls="#{code_collapse}"
+            a.accordion-toggle.collapsed role="button" data-toggle="collapse" data-parent="#accordion" href="##{code_collapse}" aria-expanded="false" aria-controls="#{code_collapse}"
               = t ".#{category}.#{title}"
         div.panel-collapse.collapse id="#{code_collapse}" role="tabpanel" aria-labelledby="headingOne"
           .panel-body
-            - docs.where(title: title).each do |doc|
-              .code-window
-                .language = doc.language
-                - if doc.source
-                  = syntax_hilight(doc.source, doc.language)
-                - else
-                  .textfield
-                    | have no
+            .grid
+              - docs.where(title: title).each do |doc|
+                .code-window.grid-item
+                  .language = doc.language
+                  - if doc.source
+                    = syntax_hilight(doc.source, doc.language)
+                  - else
+                    .textfield
+                      | have no
 
 javascript:
   $('.collapse').collapse('show');
@@ -32,4 +33,8 @@ javascript:
   });
   $('#btn-close-collapses').click(function() {
     $('.collapse').collapse('hide');
+  });
+  $('.grid').masonry({
+    itemSelector: '.grid-item',
+    //columnWidth: 200
   });
