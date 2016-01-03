@@ -1,25 +1,23 @@
 # identifier
-```ruby
+```php
 foobar
 foo_bar_baz
 ```
 
 # comment
-```ruby
-# this is a comment line
+```php
+// this is a comment line
 
-=begin
-Here is
+/* Here is
 multi-line
-comment.
-=end
+comment. */
 ```
 
 # here_document
-```ruby
-print <<EOS
+```php
+echo <<<EOS
 Here is
 here document
-EOS
+EOS;
 ```
 

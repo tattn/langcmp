@@ -1,25 +1,21 @@
 # identifier
-```ruby
+```python
 foobar
 foo_bar_baz
 ```
 
 # comment
-```ruby
+```python
 # this is a comment line
 
-=begin
-Here is
+'''Here is
 multi-line
-comment.
-=end
+comment.'''
 ```
 
 # here_document
-```ruby
-print <<EOS
-Here is
-here document
-EOS
+```python
+print """Here is
+here document."""
 ```
 
