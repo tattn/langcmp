@@ -1,7 +1,10 @@
 {
-	"engines": {
-		"node": "0.10.31",
-		"npm": "2.0.0-beta.0"
+	"name": "Langcmp",
+	"version": "0.1.0",
+	"dependencies": {
+		"bower": "^1.7.2"
 	},
-	"private": true
+	"scripts": {
+		"postinstall": "bower install"
+	}
 }
