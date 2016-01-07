@@ -2,8 +2,18 @@ require 'coderay'
 module ApplicationHelper
   def syntax_hilight code, lang
     case lang
-    when 'ruby'
+    when 'Ruby'
       lang = :ruby
+    when 'Python'
+      lang = :python
+    when 'Lua'
+      lang = :lua
+    when 'Perl'
+      lang = :perl
+    when 'C#'
+      lang = :csharp
+    when 'C++'
+      lang = :cpp
     end
     CodeRay.scan(code, lang).div(:line_numbers => :table).html_safe
 		# CodeRay.scan(code, lang).div.html_safe
